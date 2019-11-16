@@ -22,12 +22,12 @@ public class FormController {
         }
     	
     	
-        @RequestMapping(value="/save",method = RequestMethod.POST)  
+        @RequestMapping(value="/appsave",method = RequestMethod.POST)  
         public String save(@ModelAttribute("app") ApplicationForm app){  
         	System.out.println("going to dao");
             dao.save(app);  
             System.out.print("saved");
-            return "redirect:/applicationForm";//will redirect to viewemp request mapping 
+            return "redirect:/view/html/jsp/applicationForm";//will redirect to viewemp request mapping 
             //System.out.println("going to application form");
         }  
        

@@ -117,7 +117,7 @@ public class StudentDao {
 ///////////////////////
 	
 	public int save(ApplicationForm app){  
-	    String sql="insert into applicationDetail(date,firstName,lastName,emailId, phone, city,province,country,organization,jobTitle,totalExperience,collegeName,collegeYear) values('"+app.getDate()+"',"+app.getFirstName()+",'"+app.getLastName()+"','"+app.getEmailId()+"','"+app.getPhone()+"','"+app.getCity()+"','"+app.getProvince()+"','"+app.getCountry()+"','"+app.getOrganization()+"','"+app.getJobTitle()+"','"+app.getTotalExperience()+"',''"+app.getCollegeName()+",'"+app.getCollegeYear()+"')";  
+	    String sql="insert into applicationdetail (firstName,lastName,email_id,phoneno,city,province,country,organization,jobTitle,totalExperience,collegeName,collegeYear) values ('"+app.getFirstName()+"','"+app.getLastName()+"','"+app.getEmailId()+"','"+app.getPhone()+"','"+app.getCity()+"','"+app.getProvince()+"','"+app.getCountry()+"','"+app.getOrganization()+"','"+app.getJobTitle()+"','"+app.getTotalExperience()+"','"+app.getCollegeName()+"','"+app.getCollegeYear()+"')";  
 	    return template.update(sql);  
 	} 
 
