@@ -145,9 +145,8 @@ body {
 														<div class="form-group has-error">
 															<label class="control-label col-md-3">Last Name</label>
 															<div class="col-md-9">
-																<form:input path="lastName" type="text" class="form-control"
-																	placeholder="Last Name"/> <span class="help-block">
-																	This field has error. </span>
+																<form:input path="lastName"  type="text" class="form-control" placeholder=" last Name"/> 
+																<span class="help-block"> This field has error. </span>
 															</div>
 														</div>
 													</div>
@@ -217,25 +216,26 @@ body {
 														</div>
 													</div>
 													<!--/span-->
-												<%-- 	<div class="col-md-6">
+													<div class="col-md-6">
 														<div class="form-group">
 															<label class="control-label col-md-3">Country</label>
 															<div class="col-md-9">
 																<form:select path="country" class="form-control">
-
-																	<% 
+																<%-- <% 
 																		String[] locales = Locale.getISOCountries();
 																		for (String countryCode : locales) {
 																	    Locale obj = new Locale("", countryCode);%>
-																	<form:options items="${countryList}" >
+																	<form:option value = "0" label = "--- Select ---" />
+																	<c:forEach var = "cntry" items="${countryList}" >
+																	<form:option value="${cntry.country.toString()} "><c:out value="${cntry.country}"/>
 																		<%out.print(obj.getDisplayCountry()); %>
 																	</form:options>
-																	<%} %>
+																	<%} %> --%>
 
 															</form:select>	
 															</div>
 														</div>
-													</div> --%>
+													</div> 
 													<!--/span-->
 													<div class="col-md-6">
 														<div class="form-group">
