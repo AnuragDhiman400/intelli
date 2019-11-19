@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-      <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
@@ -89,7 +89,7 @@ body {
 
 
 		<h1>Add New Employee</h1>
-    <%--    <form:form method="post" action="/project-Intelli/appsave">  
+		<%--    <form:form method="post" action="/project-Intelli/appsave">  
       	<table >  
          <tr>  
           <td>Name : </td> 
@@ -102,9 +102,9 @@ body {
         </table>  
        </form:form>   --%>
 
-       
-       
-       <!-- Row -->
+
+
+		<!-- Row -->
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel panel-default card-view">
@@ -122,9 +122,9 @@ body {
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-wrap">
-										
-										  <form:form method="post" action="/project-Intelli/appsave">  
-     
+
+										<form:form method="post" action="/project-Intelli/appsave">
+
 											<div class="form-body">
 												<h6 class="txt-dark capitalize-font">
 													<i class="zmdi zmdi-account mr-10"></i>Person's Info
@@ -135,8 +135,9 @@ body {
 														<div class="form-group">
 															<label class="control-label col-md-3">First Name</label>
 															<div class="col-md-9">
-																<form:input path="firstName"  type="text" class="form-control" placeholder=" First Name"/> <span
-																	class="help-block"> This is inline help </span>
+																<form:input path="firstName" type="text"
+																	class="form-control" placeholder=" First Name" />
+																<span class="help-block"> This is inline help </span>
 															</div>
 														</div>
 													</div>
@@ -145,7 +146,8 @@ body {
 														<div class="form-group has-error">
 															<label class="control-label col-md-3">Last Name</label>
 															<div class="col-md-9">
-																<form:input path="lastName"  type="text" class="form-control" placeholder=" last Name"/> 
+																<form:input path="lastName" type="text"
+																	class="form-control" placeholder=" last Name" />
 																<span class="help-block"> This field has error. </span>
 															</div>
 														</div>
@@ -156,9 +158,9 @@ body {
 														<div class="form-group has-error">
 															<label class="control-label col-md-3">Email</label>
 															<div class="col-md-9">
-																<form:input path="emailId" type="email" class="form-control"
-																	placeholder="email"/> <span class="help-block">
-																	This field has error. </span>
+																<form:input path="emailId" type="email"
+																	class="form-control" placeholder="email" />
+																<span class="help-block"> This field has error. </span>
 															</div>
 														</div>
 													</div>
@@ -169,9 +171,9 @@ body {
 															<label class="control-label col-md-3">Phone
 																Number</label>
 															<div class="col-md-9">
-																<form:input path="phone" type="number" class="form-control"
-																	placeholder="phone"/> <span class="help-block">
-																	This field has error. </span>
+																<form:input path="phone" type="number"
+																	class="form-control" placeholder="phone" />
+																<span class="help-block"> This field has error. </span>
 															</div>
 														</div>
 													</div>
@@ -201,7 +203,8 @@ body {
 														<div class="form-group">
 															<label class="control-label col-md-3">City</label>
 															<div class="col-md-9">
-																<form:input path="city" class="form-control" placeholder="city"/>
+																<form:input path="city" class="form-control"
+																	placeholder="city" />
 															</div>
 														</div>
 													</div>
@@ -211,54 +214,55 @@ body {
 														<div class="form-group">
 															<label class="control-label col-md-3">Province</label>
 															<div class="col-md-9">
-																<form:input path="province" type="text" class="form-control" placeholder="province"/>
+																<form:input path="province" type="text"
+																	class="form-control" placeholder="province" />
 															</div>
 														</div>
 													</div>
 													<!--/span-->
-												<div class="col-md-6">
+													<div class="col-md-6">
 														<div class="form-group">
 															<label class="control-label col-md-3">Country</label>
 															<div class="col-md-9">
-															
+
 																<form:select path="country" class="form-control">
-																<form:option value="NONE" label="--Select--" />
+																	<form:option value="NONE" label="--Select--" />
 
 																	<% 
 																		String[] locales = Locale.getISOCountries();
 																		for (String countryCode : locales) {
-																	    Locale obj = new Locale("", countryCode);%>
-																	    <c:forEach var="emp" items="${country}"> 
-																	    
-															<form:option value="${ emp.country}" label="${countryList}" >
-												<%out.print(obj.getDisplayCountry()); %>
-															</form:option>		
-															
-																
-															</c:forEach>
-																 <form:options items="${countryList}"/>
-																
-												
-		
-																	
-																	<%  }  %>
+																	    Locale obj = new Locale("", countryCode);
+																	    String countries = obj.getDisplayCountry();
+																	    pageContext.setAttribute("countries",countries);
+																	    %>
 
-															</form:select>	
+
+																	<form:option value="${countries }" label="${countries}">
+																		<c:out value='${countries}' />
+																	</form:option>
+
+
+
+																	<form:options items="${countryList}" />
+
+
+
+
+
+																	<%  }  %>
+																</form:select>
 															</div>
 														</div>
-													</div>  
+													</div>
 													<!--/span-->
 													<div class="col-md-6">
 														<div class="form-group">
-															<label class="control-label col-md-3">Currently Are you working</label>
+															<label class="control-label col-md-3">Currently
+																Are you working</label>
 															<div class="col-md-9">
 																<div class="radio-list">
 																	<div class="radio-inline pl-0">
-																		<span class="radio radio-info">
-																		
-																		
-																		
-																		 <input
+																		<span class="radio radio-info"> <input
 																			type="radio" name="radio7" id="radio_9"
 																			value="option1"> <label for="radio_9">Yes</label>
 																		</span>
@@ -293,8 +297,9 @@ body {
 															<div class="form-group">
 																<label class="control-label col-md-3">Organization</label>
 																<div class="col-md-9">
-																<form:input path="organization"  type="text" class="form-control" placeholder="province"/>
-														
+																	<form:input path="organization" type="text"
+																		class="form-control" placeholder="province" />
+
 																	<input type="text" class="form-control">
 																</div>
 															</div>
@@ -304,7 +309,8 @@ body {
 																<label class="control-label col-md-3">Current
 																	Job Title</label>
 																<div class="col-md-9">
-																	<form:input path="jobTitle"  type="text" class="form-control"/>
+																	<form:input path="jobTitle" type="text"
+																		class="form-control" />
 																</div>
 															</div>
 														</div>
@@ -313,7 +319,8 @@ body {
 																<label class="control-label col-md-3">Total
 																	Experience</label>
 																<div class="col-md-9">
-																	<form:input path="totalExperience" type="text" class="form-control" />
+																	<form:input path="totalExperience" type="text"
+																		class="form-control" />
 																</div>
 															</div>
 														</div>
@@ -369,7 +376,8 @@ body {
 																<label class="control-label col-md-3">College/University
 																	Name</label>
 																<div class="col-md-9">
-																	<form:input path="collegeName" type="text" class="form-control"/>
+																	<form:input path="collegeName" type="text"
+																		class="form-control" />
 																</div>
 															</div>
 														</div>
@@ -377,7 +385,8 @@ body {
 															<div class="form-group">
 																<label class="control-label col-md-3">Year</label>
 																<div class="col-md-9">
-																	<form:input path="collegeYear" type="text" class="form-control" />
+																	<form:input path="collegeYear" type="text"
+																		class="form-control" />
 																</div>
 															</div>
 														</div>
@@ -412,8 +421,8 @@ body {
 			</div>
 		</div>
 		<!-- /Row -->
-		
-		</div>
+
+	</div>
 
 	<!-- /#wrapper -->
 
@@ -490,4 +499,3 @@ $(document).ready(function(){
 
 </body>
 </html>
-		
