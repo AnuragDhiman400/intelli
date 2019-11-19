@@ -216,26 +216,37 @@ body {
 														</div>
 													</div>
 													<!--/span-->
-													<div class="col-md-6">
+												<div class="col-md-6">
 														<div class="form-group">
 															<label class="control-label col-md-3">Country</label>
 															<div class="col-md-9">
+															
 																<form:select path="country" class="form-control">
-																<%-- <% 
+																<form:option value="NONE" label="--Select--" />
+
+																	<% 
 																		String[] locales = Locale.getISOCountries();
 																		for (String countryCode : locales) {
 																	    Locale obj = new Locale("", countryCode);%>
-																	<form:option value = "0" label = "--- Select ---" />
-																	<c:forEach var = "cntry" items="${countryList}" >
-																	<form:option value="${cntry.country.toString()} "><c:out value="${cntry.country}"/>
-																		<%out.print(obj.getDisplayCountry()); %>
-																	</form:options>
-																	<%} %> --%>
+																	    <c:forEach var="emp" items="${country}"> 
+																	    
+															<form:option value="${ emp.country}" label="${countryList}" >
+												<%out.print(obj.getDisplayCountry()); %>
+															</form:option>		
+															
+																
+															</c:forEach>
+																 <form:options items="${countryList}"/>
+																
+												
+		
+																	
+																	<%  }  %>
 
 															</form:select>	
 															</div>
 														</div>
-													</div> 
+													</div>  
 													<!--/span-->
 													<div class="col-md-6">
 														<div class="form-group">
