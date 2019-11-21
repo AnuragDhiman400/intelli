@@ -1210,11 +1210,7 @@
 			</ul>
 		</div>
 		<!-- /Right Sidebar Menu -->
-			
-					
 		
-		
-			
 		<!-- Main Content -->
 		<div class="page-wrapper">
 			<div class="container-fluid">
@@ -1252,18 +1248,12 @@
 										<div class="table-responsive">
 											<table id="datable_1" class="table table-hover display  pb-30" >
 												<thead>
-													<tr>
-														
-												
+													<tr>												
 													<th>Course Code</th>
 													<th>Course Title</th>
 													<th>Course Unit</th>
 													<th>Edit</th>
-													<th>Delete</th>
-													
-													
-													
-													
+													<th>Delete</th>													
 															</tr>
 												</thead>
 												
@@ -1279,14 +1269,11 @@
 															href="<c:url value="/editCourse/${std.courseCode}" />"> <font color="blue">Edit</font></a></td>
 															
 														<td><a
-															href="<c:url value="/deleteStudent/${std.courseCode}" />"> <font color="red">Delete</font></a></td>
-														
-													
+															href="<c:url value="/deleteStudent/${std.courseCode}" />"> <font color="red">Delete</font></a></td>													
 													</tr>
 												</c:forEach>
 															</tbody>
-											
-												
+														
 											</table>
 										</div>
 									</div>

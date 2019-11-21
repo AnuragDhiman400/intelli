@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.RowMapper;
 import com.Beans.ApplicationForm;
 import com.Beans.Courses;
 import com.Beans.Students;
+import com.Beans.questionnaire;
 
 
 public class StudentDao {
@@ -117,8 +118,20 @@ public class StudentDao {
 ///////////////////////
 	
 	public int save(ApplicationForm app){  
-	    String sql="insert into applicationdetail (firstName,lastName,email_id,phoneno,city,province,country,organization,jobTitle,totalExperience,collegeName,collegeYear) values ('"+app.getFirstName()+"','"+app.getLastName()+"','"+app.getEmailId()+"','"+app.getPhone()+"','"+app.getCity()+"','"+app.getProvince()+"','"+app.getCountry()+"','"+app.getOrganization()+"','"+app.getJobTitle()+"','"+app.getTotalExperience()+"','"+app.getCollegeName()+"','"+app.getCollegeYear()+"')";  
+	    String sql="insert into applicationdetail (firstName,lastName,emailId,phone,city,province,country,organization,jobTitle,totalExperience,collegeName,collegeYear) values ('"+app.getFirstName()+"','"+app.getLastName()+"','"+app.getEmailId()+"','"+app.getPhone()+"','"+app.getCity()+"','"+app.getProvince()+"','"+app.getCountry()+"','"+app.getOrganization()+"','"+app.getJobTitle()+"','"+app.getTotalExperience()+"','"+app.getCollegeName()+"','"+app.getCollegeYear()+"')";  
 	    return template.update(sql);  
-	} 
+	}
+	
+	
+	public List<questionnaire> getQues(){    
+	    return template.query("select * from questions_detail",new RowMapper<questionnaire>(){    
+	        public questionnaire mapRow(ResultSet rs, int row) throws SQLException {    
+	        	questionnaire ques=new questionnaire();    
+	        	ques.setId(rs.getInt(1));    
+	        	ques.setQuestion(rs.getString(2));    	                
+	            return ques;    
+	        }    
+	    });    
+	}
 
 }

@@ -218,21 +218,28 @@ body {
 													<!--/span-->
 													<div class="col-md-6">
 														<div class="form-group">
-															<label class="control-label col-md-3">Country</label>
+																<label class="control-label col-md-3">Country</label>
 															<div class="col-md-9">
+																
 																<form:select path="country" class="form-control">
-																<%-- <% 
+																	<form:option value="NONE" label="--Select--" />
+
+																	<% 
 																		String[] locales = Locale.getISOCountries();
 																		for (String countryCode : locales) {
-																	    Locale obj = new Locale("", countryCode);%>
-																	<form:option value = "0" label = "--- Select ---" />
-																	<c:forEach var = "cntry" items="${countryList}" >
-																	<form:option value="${cntry.country.toString()} "><c:out value="${cntry.country}"/>
-																		<%out.print(obj.getDisplayCountry()); %>
-																	</form:options>
-																	<%} %> --%>
+																	    Locale obj = new Locale("", countryCode);
+																	    String countries = obj.getDisplayCountry();
+																	    pageContext.setAttribute("countries",countries);
+																	    %>
 
-															</form:select>	
+																	<form:option value="${countries }" label="${countries}">
+																		<c:out value='${countries}' />
+																	</form:option>
+
+																	<form:options items="${countryList}" />
+
+																	<%  }  %>
+																</form:select>
 															</div>
 														</div>
 													</div> 
@@ -243,9 +250,7 @@ body {
 															<div class="col-md-9">
 																<div class="radio-list">
 																	<div class="radio-inline pl-0">
-																		<span class="radio radio-info">
-																		
-																		
+																		<span class="radio radio-info">																																			
 																		
 																		 <input
 																			type="radio" name="radio7" id="radio_9"
@@ -371,8 +376,43 @@ body {
 															</div>
 														</div>
 													</div>
+													
+												
+													
 												</div>
+	                                                <div id="org5">
+													<div class="seprator-block"></div>
 
+													<h6 class="txt-dark capitalize-font">
+														<i class="zmdi zmdi-account-box mr-10"></i>questionnaire
+														
+													</h6>
+													<hr class="light-grey-hr" />
+													
+													<div class="row">
+
+
+														<div class="col-md-6">
+															<div class="form-group">
+																<label class="control-label col-md-3">questionnaire
+																	</label>
+																<div class="col-md-9">
+																	<form:select path= "question" class="form-control"
+																		data-placeholder="Choose a Category" id="drop"
+																		tabindex="1">
+																		 <c:forEach var="emp" items="${list}"> 
+																		<form:option value="Category 4">Choose a Category</form:option>
+																		<form:option value="1"><${emp.question}></form:option>
+																		
+                                                                        </c:forEach> 
+
+																	</form:select>
+																</div>
+															</div>
+														</div>
+
+													</div>
+													
 											</div>
 											<!--If No organisation  -->
 

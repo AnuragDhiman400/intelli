@@ -2,7 +2,7 @@ package com.Beans;
 
 public class ApplicationForm {
 	
-	private  int Id;
+	private  int id;
 	private String date;
 	private String firstName;
 	private String lastName;
@@ -20,10 +20,10 @@ public class ApplicationForm {
 	
 	
 	public int getId() {
-		return Id;
+		return id;
 	}
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getDate() {
 		return date;
