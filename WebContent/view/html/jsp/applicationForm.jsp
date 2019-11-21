@@ -406,7 +406,7 @@ body {
 																		
                                                                         </c:forEach> 
 
-																	</form:select>
+																	</form:select> 	
 																</div>
 															</div>
 														</div>
