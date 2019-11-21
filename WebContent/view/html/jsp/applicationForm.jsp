@@ -391,22 +391,18 @@ body {
 													
 													<div class="row">
 
-
-														<div class="col-md-6">
+	<div class="col-md-6">
 															<div class="form-group">
-																<label class="control-label col-md-3">questionnaire
-																	</label>
+																<label class="control-label col-md-3">Questions</label>
 																<div class="col-md-9">
-																	<form:select path= "question" class="form-control"
+																	<select class="form-control"
 																		data-placeholder="Choose a Category" id="drop"
 																		tabindex="1">
-																		 <c:forEach var="emp" items="${list}"> 
-																		<form:option value="Category 4">Choose a Category</form:option>
-																		<form:option value="1"><${emp.question}></form:option>
+																		<option value="Category 4">Choose a Category</option>
 																		
-                                                                        </c:forEach> 
+																	
 
-																	</form:select> 	
+																	</select>
 																</div>
 															</div>
 														</div>
@@ -417,7 +413,15 @@ body {
 											<!--If No organisation  -->
 
 
-
+<h1>Hello</h1>
+<table border="2" width="70%" cellpadding="2">  
+<tr><th>Id</th></tr>
+	                                                          <c:forEach var="emp" items="${list}">   
+   <tr>  
+   <td>${emp.question}</td>  
+   </tr>
+   </c:forEach>
+   </table>
 
 
 											<div class="form-actions mt-10">

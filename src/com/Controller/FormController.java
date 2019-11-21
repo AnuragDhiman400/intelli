@@ -13,31 +13,38 @@ import com.Dao.StudentDao;
 
 import com.Beans.ApplicationForm;
 import com.Beans.questionnaire;
-@Controller  
+
+@Controller
 public class FormController {
-    	@Autowired  
-    	StudentDao dao;
-    	
-    	@RequestMapping("/view/html/jsp/applicationForm")  
-        public String showform(Model m){  
-        	m.addAttribute("command", new ApplicationForm());
-        	return "applicationForm"; 
-        }
-    	
-    	
-        @RequestMapping(value="/appsave",method = RequestMethod.POST)  
-        public String save(@ModelAttribute("app") ApplicationForm app){  
-        	System.out.println("going to dao");
-            dao.save(app);  
-            System.out.print("saved");
-            return "redirect:/view/html/jsp/applicationForm";//will redirect to viewemp request mapping 
-            //System.out.println("going to application form");
-        }  
-       
-        @RequestMapping("/view/html/jsp/applicationForm")    
-        public String viewemp(Model m){    
-            List<questionnaire> list=dao.getQues();    
-            m.addAttribute("list",list);  
-            return "applicationForm";    
-        }    
+	@Autowired
+	StudentDao dao;
+
+	@RequestMapping("/view/html/jsp/applicationForm")
+	public String showform(Model m) {
+		m.addAttribute("command", new ApplicationForm());
+		return "applicationForm";
+	}
+
+	@RequestMapping(value = "/appsave", method = RequestMethod.POST)
+	public String save(@ModelAttribute("app") ApplicationForm app) {
+		System.out.println("going to dao");
+		dao.save(app);
+		System.out.print("saved");
+		return "redirect:/view/html/jsp/applicationForm";// will redirect to viewemp request mapping
+		// System.out.println("going to application form");
+	}
+
+	/*
+	 * @RequestMapping("/applicationForm") public String viewemp(Model m){
+	 * List<questionnaire> list=dao.getQues(); m.addAttribute("list",list); return
+	 * "redirect:/view/html/jsp/applicationForm"; }
+	 */
+
+	@RequestMapping("/applicationForm")    
+    public String viewemp(Model m){    
+        List<questionnaire> list=dao.getQues();  
+        m.addAttribute("list",list);  
+        return "redirect:/applicationForm";    
+    }    
+
 }
