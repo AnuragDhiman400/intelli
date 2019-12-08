@@ -1,6 +1,7 @@
 package com.Controller;
 
 import java.util.List;
+
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +14,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.Beans.Courses;
 import com.Beans.Students;
-import com.Dao.StudentDao;  
+import com.dao.CommonDao;
+
 
 @Controller
 public class StudentController {
 	@Autowired
-	StudentDao cus;
+	CommonDao cus;
 	
 
 	
