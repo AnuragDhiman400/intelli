@@ -413,18 +413,20 @@ body {
 											<!--If No organisation  -->
 
 
-<h1>Hello</h1>
-<table border="2" width="70%" cellpadding="2">  
-<tr><th>Id</th></tr>
-	                                                          <c:forEach var="emp" items="${list}">   
-   <tr>  
-   <td>${emp.question}</td>  
-   </tr>
-   </c:forEach>
-   </table>
+												<h1>Hello</h1>
+												<a href="blank">Get Started</a>
+
+												<h1>Employees List</h1>
+												<select class="form-control"
+													data-placeholder="Choose a Category" id="drop" tabindex="1">
+													<option value="Category 4">Choose a Category</option>
+													<c:forEach var="list" items="${list}">
+														<option id="${list.question}" value="${list.question}">${list.question}</option>
+													</c:forEach>
+												</select>
 
 
-											<div class="form-actions mt-10">
+												<div class="form-actions mt-10">
 
 												<div class="col-md-offset-3 col-md-9">
 													<button type="submit" class="btn btn-success  mr-10">Submit</button>

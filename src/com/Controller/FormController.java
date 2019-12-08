@@ -40,11 +40,11 @@ public class FormController {
 	 * "redirect:/view/html/jsp/applicationForm"; }
 	 */
 
-	@RequestMapping("/applicationForm")    
+	@RequestMapping(value="/blank",method = RequestMethod.GET)    
     public String viewemp(Model m){    
         List<questionnaire> list=dao.getQues();  
         m.addAttribute("list",list);  
-        return "redirect:/applicationForm";    
+        return "applicationForm";    
     }    
 
 }

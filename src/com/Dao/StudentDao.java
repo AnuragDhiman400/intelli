@@ -127,7 +127,7 @@ public class StudentDao {
 	    return template.query("select * from questions_detail",new RowMapper<questionnaire>(){    
 	        public questionnaire mapRow(ResultSet rs, int row) throws SQLException {    
 	        	questionnaire ques=new questionnaire();    
-	        	ques.setId(rs.getInt(1));    
+	        //	ques.setId(rs.getInt(1));    
 	        	ques.setQuestion(rs.getString(2));    	                
 	            return ques;    
 	        }    
