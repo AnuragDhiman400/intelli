@@ -80,15 +80,10 @@ body {
 
 			<h3>Application Form</h3>
 
-
-
-
 		</div>
 		<!-- /Title -->
 
-
-
-		<h1>Add New Employee</h1>
+		
     <%--    <form:form method="post" action="/project-Intelli/appsave">  
       	<table >  
          <tr>  
@@ -102,8 +97,6 @@ body {
         </table>  
        </form:form>   --%>
 
-       
-       
        <!-- Row -->
 		<div class="row">
 			<div class="col-md-12">
@@ -136,7 +129,7 @@ body {
 															<label class="control-label col-md-3">First Name</label>
 															<div class="col-md-9">
 																<form:input path="firstName"  type="text" class="form-control" placeholder=" First Name"/> <span
-																	class="help-block"> This is inline help </span>
+																	class="help-block">  </span>
 															</div>
 														</div>
 													</div>
@@ -146,7 +139,7 @@ body {
 															<label class="control-label col-md-3">Last Name</label>
 															<div class="col-md-9">
 																<form:input path="lastName"  type="text" class="form-control" placeholder=" last Name"/> 
-																<span class="help-block"> This field has error. </span>
+																<span class="help-block">   </span>
 															</div>
 														</div>
 													</div>
@@ -158,28 +151,28 @@ body {
 															<div class="col-md-9">
 																<form:input path="emailId" type="email" class="form-control"
 																	placeholder="email"/> <span class="help-block">
-																	This field has error. </span>
+																	 </span>
 															</div>
 														</div>
 													</div>
 													<!--/span-->
 													<!--/span-->
-													<div class="col-md-6">
+														<div class="col-md-6">
 														<div class="form-group has-error">
-															<label class="control-label col-md-3">Phone
-																Number</label>
+															<label class="control-label col-md-3">phone</label>
 															<div class="col-md-9">
-																<form:input path="phone" type="number" class="form-control"
+																<form:input path="phone" type="text" class="form-control"
 																	placeholder="phone"/> <span class="help-block">
-																	This field has error. </span>
+																	 </span>
 															</div>
 														</div>
+													</div>
+													
+												
 													</div>
 													<!--/span-->
 												</div>
 												<!-- /Row -->
-
-
 
 												<div class="seprator-block"></div>
 
@@ -193,7 +186,10 @@ body {
 														<div class="form-group">
 															<label class="control-label col-md-3">Address</label>
 															<div class="col-md-9">
-																<input type="text" class="form-control">
+																<input type="text" class="form-control" placeholder="Address">
+																<span class="help-block">
+																	 </span>
+																
 															</div>
 														</div>
 													</div>
@@ -202,6 +198,9 @@ body {
 															<label class="control-label col-md-3">City</label>
 															<div class="col-md-9">
 																<form:input path="city" class="form-control" placeholder="city"/>
+																<span class="help-block">
+																	 </span>
+																
 															</div>
 														</div>
 													</div>
@@ -212,6 +211,9 @@ body {
 															<label class="control-label col-md-3">Province</label>
 															<div class="col-md-9">
 																<form:input path="province" type="text" class="form-control" placeholder="province"/>
+																<span class="help-block">
+																	 </span>
+																
 															</div>
 														</div>
 													</div>
@@ -219,11 +221,13 @@ body {
 													<div class="col-md-6">
 														<div class="form-group">
 																<label class="control-label col-md-3">Country</label>
+																<span class="help-block">
+																	 </span>
+																
 															<div class="col-md-9">
 																
 																<form:select path="country" class="form-control">
 																	<form:option value="NONE" label="--Select--" />
-
 																	<% 
 																		String[] locales = Locale.getISOCountries();
 																		for (String countryCode : locales) {
@@ -231,13 +235,10 @@ body {
 																	    String countries = obj.getDisplayCountry();
 																	    pageContext.setAttribute("countries",countries);
 																	    %>
-
 																	<form:option value="${countries }" label="${countries}">
 																		<c:out value='${countries}' />
 																	</form:option>
-
 																	<form:options items="${countryList}" />
-
 																	<%  }  %>
 																</form:select>
 															</div>
@@ -283,31 +284,40 @@ body {
 													<hr class="light-grey-hr" />
 
 													<div class="row">
-														<div class="col-md-6">
+													<div class="col-md-6">
 															<div class="form-group">
 																<label class="control-label col-md-3">Organization</label>
 																<div class="col-md-9">
-																<form:input path="organization"  type="text" class="form-control" placeholder="province"/>
-														
-																	<input type="text" class="form-control">
+																	<form:input path="organization"  type="text" class="form-control" placeholder="organization"/>
+																	<span class="help-block">
+																	 </span>
+																	
 																</div>
 															</div>
 														</div>
+													
 														<div class="col-md-6">
 															<div class="form-group">
 																<label class="control-label col-md-3">Current
 																	Job Title</label>
 																<div class="col-md-9">
-																	<form:input path="jobTitle"  type="text" class="form-control"/>
+																	<form:input path="jobTitle"  type="text" class="form-control" placeholder="job title"/>
+																	<span class="help-block">
+																	 </span>
+																	
 																</div>
 															</div>
 														</div>
+														
 														<div class="col-md-6">
 															<div class="form-group">
 																<label class="control-label col-md-3">Total
 																	Experience</label>
 																<div class="col-md-9">
-																	<form:input path="totalExperience" type="text" class="form-control" />
+																	<form:input path="totalExperience" type="number" class="form-control" placeholder="years" />
+																	<span class="help-block">
+																	 </span>
+																	
 																</div>
 															</div>
 														</div>
@@ -349,6 +359,9 @@ body {
 																		<option value="3">NA</option>
 
 																	</select>
+																	<span class="help-block">
+																	 </span>
+																	
 																</div>
 															</div>
 														</div>
@@ -363,24 +376,27 @@ body {
 																<label class="control-label col-md-3">College/University
 																	Name</label>
 																<div class="col-md-9">
-																	<form:input path="collegeName" type="text" class="form-control"/>
+																	<form:input path="collegeName" type="text" class="form-control" placeholder="College Name"/>
+																	
 																</div>
 															</div>
 														</div>
 														<div class="col-md-6">
 															<div class="form-group">
-																<label class="control-label col-md-3">Year</label>
+																<label class="control-label col-md-3">Number of Years
+																</label>
 																<div class="col-md-9">
-																	<form:input path="collegeYear" type="text" class="form-control" />
+																	<form:input path="collegeYear" type="number" class="form-control" placeholder="years" />
+																	<span class="help-block">
+																	 </span>
+																	
 																</div>
 															</div>
 														</div>
 													</div>
-													
-												
-													
+											
 												</div>
-	                                                <div id="org5">
+	                                                <!-- <div id="org5">
 													<div class="seprator-block"></div>
 
 													<h6 class="txt-dark capitalize-font">
@@ -391,7 +407,7 @@ body {
 													
 													<div class="row">
 
-	<div class="col-md-6">
+	                                                        <div class="col-md-6">
 															<div class="form-group">
 																<label class="control-label col-md-3">Questions</label>
 																<div class="col-md-9">
@@ -399,20 +415,31 @@ body {
 																		data-placeholder="Choose a Category" id="drop"
 																		tabindex="1">
 																		<option value="Category 4">Choose a Category</option>
-																		
-																	
 
 																	</select>
 																</div>
 															</div>
 														</div>
-
-													</div>
-													
-											</div>
+													</div>													
+											</div> -->
 											<!--If No organisation  -->
 
+												<%-- <h1>Hello</h1>
+												<table border="2" width="70%" cellpadding="2">
+													<tr>
+														<th>Id</th>
+													</tr>
+													<c:forEach var="emp" items="${list}">
+														<tr>
+															<td>${emp.question}</td>
+														</tr>
+													</c:forEach>
+												</table> --%>
+                                                <br>
+                                                <center>
+												<div class="form-actions mt-10">
 
+<<<<<<< HEAD
 												<h1>Hello</h1>
 												<a href="blank">Get Started</a>
 
@@ -429,14 +456,17 @@ body {
 												<div class="form-actions mt-10">
 
 												<div class="col-md-offset-3 col-md-9">
+=======
+												<%-- <div class="col-md-offset-3 col-md-9">     --%>
+>>>>>>> branch 'Development' of https://github.com/AnuragDhiman400/intelli.git
 													<button type="submit" class="btn btn-success  mr-10">Submit</button>
 													<button type="button" class="btn btn-default">Cancel</button>
 												</div>
 
-
 												<div class="col-md-6"></div>
 
 											</div>
+											</center>
 										</form:form>
 									</div>
 								</div>
