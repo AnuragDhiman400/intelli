@@ -1223,14 +1223,14 @@
 				<!-- Title -->
 				<div class="row heading-bg">
 					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-					  <h5 class="txt-dark">Customer table</h5>
+					  <h5 class="txt-dark">basic table</h5>
 					</div>
 					<!-- Breadcrumb -->
 					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 					  <ol class="breadcrumb">
 						<li><a href="index.html">Dashboard</a></li>
 						<li><a href="#"><span>table</span></a></li>
-						<li class="active"><span>Customer table</span></li>
+						<li class="active"><span>basic table</span></li>
 					  </ol>
 					</div>
 					<!-- /Breadcrumb -->
@@ -1243,7 +1243,7 @@
 						<div class="panel panel-default card-view">
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark">Customer Table</h6>
+									<h6 class="panel-title txt-dark">Basic Table</h6>
 								</div>
 								<div class="clearfix"></div>
 							</div>
@@ -1286,10 +1286,10 @@
 														<td>${std.college}</td>
 														<td>${std.date}</td>
 														<td><a
-															href="<c:url value="/editemp/${std.studentMatNo}" />"> <font color="blue">Edit</font></a></td>
+															href="<c:url value="/editemp/${std.studentMatNo}" />">Edit</a></td>
 															
 														<td><a
-															href="<c:url value="/deleteemp/${std.studentMatNo}" />"> <font color="red">Delete</font></a></td>
+															href="<c:url value="/deleteemp/${std.studentMatNo}" />">Delete</a></td>
 													</tr>
 												</c:forEach>
 

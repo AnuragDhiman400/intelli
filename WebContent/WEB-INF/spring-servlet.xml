@@ -20,6 +20,11 @@
 <mvc:resources mapping="/view/**" location="/view/"/> 
   
 
+
+
+
+ 
+
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">    
 <property name="prefix" value="/view/html/jsp/"></property>    
 <property name="suffix" value=".jsp"></property>    
@@ -37,8 +42,7 @@
 <property name="dataSource" ref="ds"></property>
 </bean>
 
-<bean id="dao" class="com.javatpoint.dao.EmpDao">    
-<property name="template" ref="jt"></property>    
-</bean>  
-
+<bean id="dao" class="com.Dao.CustomerDao">
+<property name="template" ref="jt"></property>
+</bean>
 </beans>

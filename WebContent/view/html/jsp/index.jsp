@@ -1,4 +1,4 @@
-ol <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -639,10 +639,10 @@ ol <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 					<a href="javascript:void(0);" data-toggle="collapse" data-target="#table_dr"><div class="pull-left"><i class="zmdi zmdi-format-size mr-20"></i><span class="right-nav-text">Tables</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
 					<ul id="table_dr" class="collapse collapse-level-1 two-col-list">
 						<li>
-							<a href="studentData">Student Data</a>
+							<a href="basic-table.html">Basic Table</a>
 						</li>
 						<li>
-							<a href="courseData">Course Data</a>
+							<a href="bootstrap-table.html">Bootstrap Table</a>
 						</li>
 						<li>
 							<a href="data-table.html">Data Table</a>
